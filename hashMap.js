@@ -26,7 +26,7 @@ class HashMap {
         }
 
         if (this.buckets[index] === undefined) {
-            this.buckets[index] = [[key, value]];   
+            this.buckets[index] = [[key, value]];
             this.size++;
         } else {
             const bucket = this.buckets[index];
@@ -52,7 +52,19 @@ class HashMap {
     }
 
     _resize() {
-        // TODO: implementar
+        const oldBuckets = this.buckets;  // Guardar los buckets antiguos
+        this.capacity = this.capacity * 2;  // Duplicar la capacidad
+        this.buckets = new Array(this.capacity); //crear array de nuevos buckets
+        this.size = 0; // Reiniciar el tamaño
+
+        // Recorrer los buckets viejos y reinsertar cada par clave-valor
+        for (const bucket of oldBuckets) {
+            if (bucket !== undefined) {
+                for (const [key, value] of bucket) {
+                    this.set(key, value);
+                }
+            }
+        }
     }
 }
 
