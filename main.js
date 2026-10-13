@@ -2,8 +2,10 @@ import { HashMap } from "./hashMap.js";
 
 const test = new HashMap();
 
-console.log("hash('apple'):", test.hash("apple"));
-console.log("hash('banana'):", test.hash("banana"));
-console.log("hash('cat'):", test.hash("cat"));
-console.log("hash('dog'):", test.hash("dog"));
+test.set("apple", "red");
+test.set("banana", "yellow");
+test.set("cat", "brown");
+
+console.log("Size:", test.size);
+console.log("Buckets:", JSON.stringify(test.buckets, null, 2));
 
