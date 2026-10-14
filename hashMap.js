@@ -131,6 +131,21 @@ class HashMap {
         this.buckets = new Array(this.capacity);
         this.size = 0;
     }
+
+    // Método key() devuelve un array con todas las claves del HashMap
+
+    keys() {
+        const result = [];
+
+        for (const bucket of this.buckets) {
+            if (bucket !== undefined) {
+                for (const [key, _] of bucket) {
+                    result.push(key);
+                }
+            }
+        }
+        return result;
+    }
 }
 
 

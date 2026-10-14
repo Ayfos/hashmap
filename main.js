@@ -4,17 +4,8 @@ const test = new HashMap();
 
 test.set("apple", "red");
 test.set("banana", "yellow");
+test.set("carrot", "orange");
 test.set("dog", "brown");
+test.set("elephant", "gray");
 
-console.log("Antes de clear:");
-console.log("  length:", test.length());    
-console.log("  capacity:", test.capacity);   
-console.log("  get('apple'):", test.get("apple"));  
-
-test.clear();
-
-console.log("\nDespués de clear:");
-console.log("  length:", test.length());     
-console.log("  capacity:", test.capacity);   
-console.log("  get('apple'):", test.get("apple")); 
-console.log("  has('apple'):", test.has("apple"));  
+console.log("keys():", test.keys());
