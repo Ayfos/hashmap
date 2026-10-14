@@ -5,10 +5,12 @@ const test = new HashMap();
 test.set("apple", "red");
 test.set("banana", "yellow");
 test.set("dog", "brown");
-test.set("lion", "golden");
 
-console.log("has('apple'):", test.has("apple"));     
-console.log("has('banana'):", test.has("banana"));   
-console.log("has('dog'):", test.has("dog"));         
-console.log("has('fish'):", test.has("fish"));       
-console.log("has('cat'):", test.has("cat"));         
+console.log("Size inicial:", test.size);          
+
+console.log("remove('apple'):", test.remove("apple"));   
+console.log("Size después:", test.size);          
+console.log("get('apple'):", test.get("apple"));  
+
+console.log("remove('fish'):", test.remove("fish"));     
+console.log("Size sigue:", test.size);            

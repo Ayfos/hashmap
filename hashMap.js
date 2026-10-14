@@ -93,6 +93,32 @@ class HashMap {
     has(key) {
         return this.get(key) !== undefined;
     }
+
+    // Método remove(key) elimina un par clave-valor del HashMap
+
+    remove(key) {
+        const index = this.hash(key);
+        
+        if (index < 0 || index >= this.buckets.length) {
+            throw new Error("Trying to access index out of bounds");
+        }
+
+        const bucket = this.buckets[index];
+        
+        if (bucket === undefined) {
+            return false;
+        }
+
+        for (let i = 0; i < bucket.length; i++) {
+            if (bucket[i][0] === key) {
+                bucket.splice(i, 1);
+                this.size--;
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
 
 
