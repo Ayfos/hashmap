@@ -98,13 +98,13 @@ class HashMap {
 
     remove(key) {
         const index = this.hash(key);
-        
+
         if (index < 0 || index >= this.buckets.length) {
             throw new Error("Trying to access index out of bounds");
         }
 
         const bucket = this.buckets[index];
-        
+
         if (bucket === undefined) {
             return false;
         }
@@ -152,7 +152,7 @@ class HashMap {
     values() {
         const result = [];
 
-        for (const buket of  this.buckets) {
+        for (const buket of this.buckets) {
             if (buket !== undefined) {
                 for (const [, value] of buket) {
                     result.push(value);
@@ -161,6 +161,28 @@ class HashMap {
         }
         return result;
     }
+    //Métod entries() devuelve un array con todos los pares clave-valor del HashMap
+
+    entries() {
+        const result = [];
+    
+        for (const bucket of this.buckets) {
+            if (bucket !== undefined) {       
+                for (const pair of bucket) {
+                    result.push(pair);
+                }
+            }
+        }
+    
+        return result;
+    }
+
+
+
+
+
+
+
 }
 
 

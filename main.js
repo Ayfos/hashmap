@@ -8,4 +8,4 @@ test.set("carrot", "orange");
 test.set("dog", "brown");
 test.set("elephant", "gray");
 
-console.log("values():", test.values());
+console.log("entries():", test.entries());
