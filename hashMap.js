@@ -146,6 +146,21 @@ class HashMap {
         }
         return result;
     }
+
+    // Método values() devuelve un array con todos los valores del HashMap
+
+    values() {
+        const result = [];
+
+        for (const buket of  this.buckets) {
+            if (buket !== undefined) {
+                for (const [, value] of buket) {
+                    result.push(value);
+                }
+            }
+        }
+        return result;
+    }
 }
 
 
