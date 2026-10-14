@@ -124,6 +124,13 @@ class HashMap {
     length() {
         return this.size;
     }
+
+    // Método clear() elimina todas las entradas del HashMap
+
+    clear() {
+        this.buckets = new Array(this.capacity);
+        this.size = 0;
+    }
 }
 
 
