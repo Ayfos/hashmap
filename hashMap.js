@@ -119,6 +119,11 @@ class HashMap {
 
         return false;
     }
+
+    // Método length() devuelve el número de pares clave-valor en el HashMap
+    length() {
+        return this.size;
+    }
 }
 
 

@@ -2,15 +2,22 @@ import { HashMap } from "./hashMap.js";
 
 const test = new HashMap();
 
+console.log("length inicial:", test.length());  // 0
+
 test.set("apple", "red");
 test.set("banana", "yellow");
 test.set("dog", "brown");
 
-console.log("Size inicial:", test.size);          
+console.log("length después de 3 sets:", test.length());  
 
-console.log("remove('apple'):", test.remove("apple"));   
-console.log("Size después:", test.size);          
-console.log("get('apple'):", test.get("apple"));  
+test.remove("apple");
 
-console.log("remove('fish'):", test.remove("fish"));     
-console.log("Size sigue:", test.size);            
+console.log("length después de remove:", test.length());  
+
+test.set("apple", "red");   // re-añadir
+
+console.log("length después de re-añadir:", test.length());  
+
+test.set("apple", "GREEN");  // sobrescribir (no añade)
+
+console.log("length después de sobrescribir:", test.length());  
